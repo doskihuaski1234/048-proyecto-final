@@ -1,4 +1,4 @@
-﻿import { defineConfig, devices } from "@playwright/test";
+import { defineConfig, devices } from "@playwright/test";
 
 export default defineConfig({
   testDir: "./tests",
@@ -11,7 +11,7 @@ export default defineConfig({
     ["html", { outputFolder: "playwright-report", open: "never" }]
   ],
   use: {
-    baseURL: process.env.BASE_URL || "http://localhost:5173",
+    baseURL: process.env.BASE_URL || "http://opencart.abstracta.us",
     trace: "retain-on-failure",
     screenshot: "only-on-failure",
     video: "retain-on-failure"
