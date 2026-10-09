@@ -1,0 +1,29 @@
+{
+  "name": "048-proyecto-final",
+  "version": "1.0.0",
+  "description": "Proyecto final de pruebas automatizadas con Playwright y TypeScript",
+  "main": "index.js",
+  "scripts": {
+    "test": "playwright test",
+    "test:headed": "playwright test --headed",
+    "test:ui": "playwright test --ui",
+    "test:report": "playwright show-report"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/doskihuaski1234/048-proyecto-final.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/doskihuaski1234/048-proyecto-final/issues"
+  },
+  "homepage": "https://github.com/doskihuaski1234/048-proyecto-final#readme",
+  "devDependencies": {
+    "@playwright/test": "^1.64.0",
+    "@types/node": "^26.6.4",
+    "typescript": "^7.0.2"
+  }
+}
