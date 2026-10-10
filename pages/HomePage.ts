@@ -18,7 +18,7 @@ export class HomePage {
   }
 
   async open(): Promise<void> {
-    await this.page.goto("/");
+    await this.page.goto("/", { waitUntil: "domcontentloaded" });
   }
 
   async getPageTitle(): Promise<string> {
