@@ -16,14 +16,19 @@ test.afterEach(async ({ page, browserName }, testInfo) => {
 
   fs.mkdirSync(evidenceDirectory, { recursive: true });
 
-  const safeTitle = testInfo.title
-    .normalize("NFD")
-    .replace(/[\u0300-\u036f]/g, "")
-    .replace(/[^a-zA-Z0-9_-]+/g, "-")
-    .replace(/^-+|-+$/g, "")
-    .slice(0, 90);
+  const safeName = (value: string) =>
+    value
+      .normalize("NFD")
+      .replace(/[\u0300-\u036f]/g, "")
+      .replace(/[^a-zA-Z0-9_-]+/g, "-")
+      .replace(/^-+|-+$/g, "")
+      .slice(0, 70);
 
-  const fileName = `${safeTitle}-${testInfo.status}.png`;
+  const testFile = safeName(path.basename(testInfo.file, ".ts"));
+  const testTitle = safeName(testInfo.title);
+  const status = safeName(testInfo.status);
+
+  const fileName = `${testFile}--${testTitle}--${status}.png`;
   const screenshotPath = path.join(evidenceDirectory, fileName);
 
   try {
