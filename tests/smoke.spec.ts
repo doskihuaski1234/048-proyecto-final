@@ -1,20 +1,19 @@
 import "../helpers/evidencias";
-import { test, expect } from "@playwright/test";
-import { HomePage } from "../pages/HomePage";
+import { test, expect } from "../fixtures/test-fixtures";
 
 test.describe("Pruebas smoke de OpenCart", () => {
-  test("@smoke muestra la pagina principal de OpenCart", async ({ page }) => {
-    const homePage = new HomePage(page);
-
+  test("@smoke muestra la página principal de OpenCart", async ({
+    homePage
+  }) => {
     await homePage.open();
 
-    await expect(page).toHaveTitle("Your Store");
+    await expect(homePage.page).toHaveTitle("Your Store");
     await expect(homePage.logo).toBeVisible();
   });
 
-  test("@smoke muestra el buscador habilitado", async ({ page }) => {
-    const homePage = new HomePage(page);
-
+  test("@smoke muestra el buscador habilitado", async ({
+    homePage
+  }) => {
     await homePage.open();
 
     await expect(homePage.searchInput).toBeVisible();
@@ -23,27 +22,27 @@ test.describe("Pruebas smoke de OpenCart", () => {
     await expect(homePage.searchButton).toBeEnabled();
   });
 
-  test("@smoke muestra enlaces de categorias", async ({ page }) => {
-    const homePage = new HomePage(page);
-
+  test("@smoke muestra enlaces de categorías", async ({
+    homePage
+  }) => {
     await homePage.open();
 
     await expect(homePage.categoryLinks.first()).toBeVisible();
     expect(await homePage.categoryLinks.count()).toBeGreaterThan(0);
   });
 
-  test("@smoke muestra productos en el catalogo", async ({ page }) => {
-    const homePage = new HomePage(page);
-
+  test("@smoke muestra productos en el catálogo", async ({
+    homePage
+  }) => {
     await homePage.open();
 
     await expect(homePage.productCards.first()).toBeVisible();
     expect(await homePage.productCards.count()).toBeGreaterThan(0);
   });
 
-  test("@smoke permite escribir una busqueda", async ({ page }) => {
-    const homePage = new HomePage(page);
-
+  test("@smoke permite escribir una búsqueda", async ({
+    homePage
+  }) => {
     await homePage.open();
 
     await homePage.searchInput.fill("MacBook");

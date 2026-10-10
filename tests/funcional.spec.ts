@@ -1,11 +1,8 @@
-import "../helpers/evidencias";
-import { test, expect } from "@playwright/test";
-import { HomePage } from "../pages/HomePage";
+﻿import "../helpers/evidencias";
+import { test, expect } from "../fixtures/test-fixtures";
 
 test.describe("Pruebas funcionales de OpenCart", () => {
-  test("muestra las categorías de navegación", async ({ page }) => {
-    const homePage = new HomePage(page);
-
+  test("@regression muestra las categorías de navegación", async ({ homePage }) => {
     await homePage.open();
 
     await expect(homePage.logo).toBeVisible();
@@ -13,23 +10,25 @@ test.describe("Pruebas funcionales de OpenCart", () => {
     await expect(homePage.categoryLinks).not.toHaveCount(0);
   });
 
-  test("permite buscar un producto existente", async ({ page }) => {
-    const homePage = new HomePage(page);
-
+  test("@regression permite buscar un producto existente", async ({
+    homePage,
+    searchResultsPage
+  }) => {
     await homePage.open();
     await homePage.searchProduct("MacBook");
 
-    await expect(page).toHaveURL(/route=product\/search/);
-    await expect(page.locator("#content")).toContainText(/MacBook/i);
+    await expect(homePage.page).toHaveURL(/route=product\/search/);
+    await expect(searchResultsPage.content).toContainText(/MacBook/i);
   });
 
-  test("no muestra productos para una búsqueda inexistente", async ({ page }) => {
-    const homePage = new HomePage(page);
-
+  test("@regression no muestra productos para una búsqueda inexistente", async ({
+    homePage,
+    searchResultsPage
+  }) => {
     await homePage.open();
     await homePage.searchProduct("ProductoInexistenteXYZ987");
 
-    await expect(page).toHaveURL(/route=product\/search/);
-    await expect(homePage.productCards).toHaveCount(0);
+    await expect(homePage.page).toHaveURL(/route=product\/search/);
+    await expect(searchResultsPage.productCards).toHaveCount(0);
   });
 });

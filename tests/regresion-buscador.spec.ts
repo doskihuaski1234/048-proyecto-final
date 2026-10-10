@@ -1,15 +1,15 @@
 ﻿import "../helpers/evidencias";
-import { test, expect } from "@playwright/test";
-import { HomePage } from "../pages/HomePage";
+import { test, expect } from "../fixtures/test-fixtures";
 
-test.describe("Pruebas adicionales de regresion del buscador", () => {
-  test("busca un producto aunque el texto tenga espacios alrededor", async ({ page }) => {
-    const homePage = new HomePage(page);
-
+test.describe("Pruebas adicionales de regresión del buscador", () => {
+  test("@regression busca un producto aunque el texto tenga espacios alrededor", async ({
+    homePage,
+    searchResultsPage
+  }) => {
     await homePage.open();
     await homePage.searchProduct("  MacBook  ");
 
-    await expect(page).toHaveURL(/route=product\/search/);
-    await expect(page.locator("#content")).toContainText(/MacBook/i);
+    await expect(homePage.page).toHaveURL(/route=product\/search/);
+    await expect(searchResultsPage.content).toContainText(/MacBook/i);
   });
 });

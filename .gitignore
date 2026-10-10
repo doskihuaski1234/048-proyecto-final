@@ -6,3 +6,6 @@ blob-report/
 .env.*
 !.env.example
 *.log
+.snapshots/
+*.backup
+*.backup-*

@@ -1,37 +1,20 @@
 ﻿import "../helpers/evidencias";
-import { test, expect } from "@playwright/test";
-import { HomePage } from "../pages/HomePage";
+import { test, expect } from "../fixtures/test-fixtures";
 
-test.describe("Pruebas de regresion de OpenCart", () => {
-  test("permite agregar un producto al carrito", async ({ page }) => {
-    const homePage = new HomePage(page);
-
+test.describe("Pruebas de regresión de OpenCart", () => {
+  test("@regression permite agregar un producto al carrito", async ({
+    homePage,
+    cartPage
+  }) => {
     await homePage.open();
     await homePage.searchProduct("MacBook");
 
-    const producto = page
-      .locator("#content .product-thumb")
-      .filter({ hasText: "MacBook" })
-      .first();
+    await cartPage.addProductFromSearchResults("MacBook");
 
-    await expect(producto).toBeVisible();
-
-    const botonAgregar = producto.locator(
-      'button[onclick*="cart.add"]'
-    );
-
-    await expect(botonAgregar).toBeVisible();
-    await botonAgregar.click();
-
-    const mensajeExito = page.locator(".alert-success");
-
-    await expect(mensajeExito).toBeVisible();
-    await expect(mensajeExito).toContainText(
+    await expect(cartPage.successAlert).toBeVisible();
+    await expect(cartPage.successAlert).toContainText(
       /added MacBook to your shopping cart/i
     );
-
-    await expect(page.locator("#cart-total")).toContainText(
-      /1 item\(s\)/
-    );
+    await expect(cartPage.cartTotal).toContainText(/1 item\(s\)/);
   });
 });

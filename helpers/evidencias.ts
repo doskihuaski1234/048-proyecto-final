@@ -1,4 +1,4 @@
-﻿import { test } from "@playwright/test";
+import { test } from "@playwright/test";
 import fs from "node:fs";
 import path from "node:path";
 
@@ -26,7 +26,7 @@ test.afterEach(async ({ page, browserName }, testInfo) => {
 
   const testFile = safeName(path.basename(testInfo.file, ".ts"));
   const testTitle = safeName(testInfo.title);
-  const status = safeName(testInfo.status);
+  const status = safeName(testInfo.status ?? "desconocido");
 
   const fileName = `${testFile}--${testTitle}--${status}.png`;
   const screenshotPath = path.join(evidenceDirectory, fileName);
