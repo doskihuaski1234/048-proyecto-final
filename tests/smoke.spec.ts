@@ -1,4 +1,5 @@
-﻿import { test, expect } from "@playwright/test";
+import "../helpers/evidencias";
+import { test, expect } from "@playwright/test";
 import { HomePage } from "../pages/HomePage";
 
 test.describe("Pruebas smoke de OpenCart", () => {
