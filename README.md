@@ -132,6 +132,29 @@ npx playwright test
 
 Sustituye el ejemplo por la URL real del entorno que deseas probar.
 
+
+## Configuración de variables de entorno
+
+El proyecto admite la variable opcional `BASE_URL` para seleccionar el sitio de pruebas.
+Si no se define, Playwright utiliza `http://opencart.abstracta.us`.
+
+Se incluye `.env.example` como referencia. Playwright no carga automáticamente
+ese archivo; si deseas usar variables desde un archivo `.env`, debes configurar
+explícitamente su carga antes de ejecutar las pruebas.
+
+En PowerShell puedes establecer la URL para la sesión actual:
+
+```powershell
+$env:BASE_URL = "http://opencart.abstracta.us"
+npx playwright test --workers=1
+```
+
+Para volver al comportamiento predeterminado en esa terminal:
+
+```powershell
+Remove-Item Env:BASE_URL -ErrorAction SilentlyContinue
+```
+
 ## 7. Generación y consulta del reporte HTML
 
 Después de ejecutar las pruebas, abre el reporte con:
@@ -246,7 +269,7 @@ Las incidencias confirmadas deben documentarse mediante GitHub Issues, incluyend
 
 Antes de entregar, verifica que el colaborador solicitado tenga acceso al repositorio y que las incidencias documentadas estén enlazadas a sus respectivos Issues.
 
-## Validación integral del 23 de octubre de 2026
+## Validación integral más reciente (23 de octubre de 2026)
 
 - Pruebas ejecutadas: 45.
 - Pruebas aprobadas: 45.
@@ -256,4 +279,5 @@ Antes de entregar, verifica que el colaborador solicitado tenga acceso al reposi
 - WebKit: 15 de 15 aprobadas.
 - Verificación de tipos de TypeScript: aprobada.
 
-Registro: `reportes/ejecucion-integral_2026-10-23_20261023_175035.txt`.
+Registro final: `reportes/ejecucion-integral-final_20261023_205927.txt`. Verificación adicional de WebKit: `reportes/verificacion-webkit_20261023_205629.txt`.
+
