@@ -1,0 +1,53 @@
+﻿**********************
+Inicio de la transcripción de Windows PowerShell
+Hora de inicio: 20261023170035
+Nombre de usuario: ALEX\PAOLO
+Usuario RunAs: ALEX\PAOLO
+Nombre de la configuración: 
+Máquina: ALEX (Microsoft Windows NT 10.0.26200.0)
+Aplicación host: C:\WINDOWS\System32\WindowsPowerShell\v1.0\powershell.exe -noexit -command try { . "c:\Users\libre\AppData\Local\Programs\Microsoft VS Code\6d62b1d5da\resources\app\out\vs\workbench\contrib\terminal\common\scripts\shellIntegration.ps1" } catch {}
+Id. de proceso: 2708
+PSVersion: 5.1.26100.9711
+PSEdition: Desktop
+PSCompatibleVersions: 1.0, 2.0, 3.0, 4.0, 5.0, 5.1.26100.9711
+BuildVersion: 10.0.26100.9711
+CLRVersion: 4.0.30319.42000
+WSManStackVersion: 3.0
+PSRemotingProtocolVersion: 2.3
+SerializationVersion: 1.1.0.1
+**********************
+La transcripción ha comenzado. El archivo de salida es .\reportes\auditoria-issues\verificacion-BUG-001_20261023_170035.txt
+
+===== ISSUE PUBLICADO =====
+
+
+number    : 1
+title     : [BUG-001] Búsqueda sin resultados muestra mensaje del carrito vacío
+state     : OPEN
+url       : https://github.com/doskihuaski1234/048-proyecto-final/issues/1
+createdAt : 2026-10-23T22:59:49Z
+updatedAt : 2026-10-23T22:59:49Z
+
+
+
+
+===== COMPROBAR REGISTRO LOCAL =====
+CORRECTO: la URL del Issue aparece en el registro.
+
+===== ARCHIVOS DE EVIDENCIA =====
+
+Name                                     Length LastWriteTime
+----                                     ------ -------------
+consulta-github_20261023_165736.txt        4066 23/10/2026 16:57:37
+publicacion-BUG-001_20261023_165948.txt    1709 23/10/2026 16:59:50
+registro-issues.md                          794 23/10/2026 16:59:50
+revision-issues_20261023_164442.txt        2338 23/10/2026 16:44:47
+verificacion-BUG-001_20261023_170035.txt    976 23/10/2026 17:00:35
+
+
+
+Verificación guardada en: .\reportes\auditoria-issues\verificacion-BUG-001_20261023_170035.txt
+**********************
+Fin de la transcripción de Windows PowerShell
+Hora de finalización: 20261023170035
+**********************

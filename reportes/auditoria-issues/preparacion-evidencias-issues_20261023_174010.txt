@@ -1,0 +1,58 @@
+﻿**********************
+Inicio de la transcripción de Windows PowerShell
+Hora de inicio: 20261023174010
+Nombre de usuario: ALEX\PAOLO
+Usuario RunAs: ALEX\PAOLO
+Nombre de la configuración: 
+Máquina: ALEX (Microsoft Windows NT 10.0.26200.0)
+Aplicación host: C:\WINDOWS\System32\WindowsPowerShell\v1.0\powershell.exe -noexit -command try { . "c:\Users\libre\AppData\Local\Programs\Microsoft VS Code\6d62b1d5da\resources\app\out\vs\workbench\contrib\terminal\common\scripts\shellIntegration.ps1" } catch {}
+Id. de proceso: 2708
+PSVersion: 5.1.26100.9711
+PSEdition: Desktop
+PSCompatibleVersions: 1.0, 2.0, 3.0, 4.0, 5.0, 5.1.26100.9711
+BuildVersion: 10.0.26100.9711
+CLRVersion: 4.0.30319.42000
+WSManStackVersion: 3.0
+PSRemotingProtocolVersion: 2.3
+SerializationVersion: 1.1.0.1
+**********************
+La transcripción ha comenzado. El archivo de salida es .\reportes\auditoria-issues\preparacion-evidencias-issues_20261023_174010.txt
+
+===== 1. VALIDAR CAPTURAS ORIGINALES =====
+Las cinco capturas originales existen.
+
+===== 2. COPIAR CAPTURAS AL EXPEDIENTE =====
+OK: BUG-001-busqueda-sin-resultados.png
+OK: BUG-001-busqueda-sin-resultados-repeticion.png
+OK: BUG-002-iphone-carrito-advertencia.png
+OK: BUG-002-iphone-carrito-repeticion.png
+OK: BUG-002-iphone-carrito-evidencia-adicional.png
+
+===== 3. GENERAR ÍNDICE DE EVIDENCIAS =====
+Índice creado: .\evidencias\github-issues\README-evidencias.md
+
+===== 4. GENERAR MANIFIESTO SHA-256 =====
+Manifiesto SHA-256 generado.
+
+===== 5. RESUMEN DE ARCHIVOS =====
+
+Name                                           Length LastWriteTime
+----                                           ------ -------------
+BUG-001-busqueda-sin-resultados-repeticion.png 101951 16/10/2026 18:23:30
+BUG-001-busqueda-sin-resultados.png            101951 16/10/2026 18:23:30
+BUG-002-iphone-carrito-advertencia.png         145143 16/10/2026 18:23:30
+BUG-002-iphone-carrito-evidencia-adicional.png  83100 16/10/2026 18:23:30
+BUG-002-iphone-carrito-repeticion.png          145143 16/10/2026 18:23:30
+MANIFIESTO-SHA256.txt                             687 23/10/2026 17:40:10
+README-evidencias.md                             1325 23/10/2026 17:40:10
+
+
+Índice: .\evidencias\github-issues\README-evidencias.md
+Manifiesto: .\evidencias\github-issues\MANIFIESTO-SHA256.txt
+Transcripción: .\reportes\auditoria-issues\preparacion-evidencias-issues_20261023_174010.txt
+
+No se realizaron commits ni push.
+**********************
+Fin de la transcripción de Windows PowerShell
+Hora de finalización: 20261023174010
+**********************

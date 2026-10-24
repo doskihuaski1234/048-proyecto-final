@@ -1,0 +1,53 @@
+﻿**********************
+Inicio de la transcripción de Windows PowerShell
+Hora de inicio: 20261023173830
+Nombre de usuario: ALEX\PAOLO
+Usuario RunAs: ALEX\PAOLO
+Nombre de la configuración: 
+Máquina: ALEX (Microsoft Windows NT 10.0.26200.0)
+Aplicación host: C:\WINDOWS\System32\WindowsPowerShell\v1.0\powershell.exe -noexit -command try { . "c:\Users\libre\AppData\Local\Programs\Microsoft VS Code\6d62b1d5da\resources\app\out\vs\workbench\contrib\terminal\common\scripts\shellIntegration.ps1" } catch {}
+Id. de proceso: 2708
+PSVersion: 5.1.26100.9711
+PSEdition: Desktop
+PSCompatibleVersions: 1.0, 2.0, 3.0, 4.0, 5.0, 5.1.26100.9711
+BuildVersion: 10.0.26100.9711
+CLRVersion: 4.0.30319.42000
+WSManStackVersion: 3.0
+PSRemotingProtocolVersion: 2.3
+SerializationVersion: 1.1.0.1
+**********************
+La transcripción ha comenzado. El archivo de salida es .\reportes\auditoria-issues\publicacion-BUG-002_20261023_173830.txt
+
+===== 1. VALIDAR GITHUB =====
+
+
+===== 2. VALIDAR DOCUMENTO Y CAPTURAS =====
+
+FullName                                                                                                                      Length LastWriteTime
+--------                                                                                                                      ------ -------------
+C:\Users\libre\OneDrive\Imágenes\Escritorio\048-proyecto-final\evidencias\manuales\CP-MAN-10-agregado.png                     145143 16/10/2026 18:23:30
+C:\Users\libre\OneDrive\Imágenes\Escritorio\048-proyecto-final\evidencias\manuales\CP-MAN-10-repeticion.png                   145143 16/10/2026 18:23:30
+C:\Users\libre\OneDrive\Imágenes\Escritorio\048-proyecto-final\evidencias\manuales\CP-MAN-10.png                               83100 16/10/2026 18:23:30
+C:\Users\libre\OneDrive\Imágenes\Escritorio\048-proyecto-final\reportes\ejecucion-manual\BUG-002-disponibilidad-carrito.docx 1818563 16/10/2026 18:23:30
+
+
+Documento y tres capturas encontrados.
+
+===== 3. COMPROBAR DUPLICADOS =====
+
+===== 4. PUBLICAR BUG-002 =====
+Issue publicado correctamente.
+
+===== 5. GUARDAR REGISTRO =====
+Registro actualizado.
+
+===== 6. RESUMEN =====
+Issue: #2
+URL: https://github.com/doskihuaski1234/048-proyecto-final/issues/2
+Registro: .\reportes\auditoria-issues\registro-issues.md
+Transcripción: .\reportes\auditoria-issues\publicacion-BUG-002_20261023_173830.txt
+No se realizó ningún commit ni push.
+**********************
+Fin de la transcripción de Windows PowerShell
+Hora de finalización: 20261023173832
+**********************

@@ -1,0 +1,46 @@
+﻿**********************
+Inicio de la transcripción de Windows PowerShell
+Hora de inicio: 20261023165948
+Nombre de usuario: ALEX\PAOLO
+Usuario RunAs: ALEX\PAOLO
+Nombre de la configuración: 
+Máquina: ALEX (Microsoft Windows NT 10.0.26200.0)
+Aplicación host: C:\WINDOWS\System32\WindowsPowerShell\v1.0\powershell.exe -noexit -command try { . "c:\Users\libre\AppData\Local\Programs\Microsoft VS Code\6d62b1d5da\resources\app\out\vs\workbench\contrib\terminal\common\scripts\shellIntegration.ps1" } catch {}
+Id. de proceso: 2708
+PSVersion: 5.1.26100.9711
+PSEdition: Desktop
+PSCompatibleVersions: 1.0, 2.0, 3.0, 4.0, 5.0, 5.1.26100.9711
+BuildVersion: 10.0.26100.9711
+CLRVersion: 4.0.30319.42000
+WSManStackVersion: 3.0
+PSRemotingProtocolVersion: 2.3
+SerializationVersion: 1.1.0.1
+**********************
+La transcripción ha comenzado. El archivo de salida es .\reportes\auditoria-issues\publicacion-BUG-001_20261023_165948.txt
+
+===== 1. VALIDAR GITHUB =====
+
+
+===== 2. VALIDAR EVIDENCIAS =====
+Las dos capturas existen.
+
+===== 3. COMPROBAR DUPLICADOS =====
+
+===== 4. PREPARAR Y PUBLICAR BUG-001 =====
+Issue publicado correctamente.
+Número: #1
+URL: https://github.com/doskihuaski1234/048-proyecto-final/issues/1
+
+===== 5. GUARDAR TRAZABILIDAD LOCAL =====
+
+===== 6. RESULTADO =====
+Issue: #1
+URL: https://github.com/doskihuaski1234/048-proyecto-final/issues/1
+Registro: .\reportes\auditoria-issues\registro-issues.md
+Transcripción: .\reportes\auditoria-issues\publicacion-BUG-001_20261023_165948.txt
+
+No se realizó ningún commit ni push.
+**********************
+Fin de la transcripción de Windows PowerShell
+Hora de finalización: 20261023165950
+**********************

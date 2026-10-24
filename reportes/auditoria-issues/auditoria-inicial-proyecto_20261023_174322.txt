@@ -1,0 +1,170 @@
+﻿**********************
+Inicio de la transcripción de Windows PowerShell
+Hora de inicio: 20261023174322
+Nombre de usuario: ALEX\PAOLO
+Usuario RunAs: ALEX\PAOLO
+Nombre de la configuración: 
+Máquina: ALEX (Microsoft Windows NT 10.0.26200.0)
+Aplicación host: C:\WINDOWS\System32\WindowsPowerShell\v1.0\powershell.exe -noexit -command try { . "c:\Users\libre\AppData\Local\Programs\Microsoft VS Code\6d62b1d5da\resources\app\out\vs\workbench\contrib\terminal\common\scripts\shellIntegration.ps1" } catch {}
+Id. de proceso: 2708
+PSVersion: 5.1.26100.9711
+PSEdition: Desktop
+PSCompatibleVersions: 1.0, 2.0, 3.0, 4.0, 5.0, 5.1.26100.9711
+BuildVersion: 10.0.26100.9711
+CLRVersion: 4.0.30319.42000
+WSManStackVersion: 3.0
+PSRemotingProtocolVersion: 2.3
+SerializationVersion: 1.1.0.1
+**********************
+La transcripción ha comenzado. El archivo de salida es .\reportes\auditoria-issues\auditoria-inicial-proyecto_20261023_174322.txt
+
+===== 1. RUTA Y RAMA =====
+
+
+
+===== 2. ESTADO DE GIT =====
+
+
+===== 3. RESUMEN DE CAMBIOS =====
+
+
+
+===== 4. ARCHIVOS NUEVOS NO SEGUIDOS =====
+
+
+===== 5. ARCHIVOS IGNORADOS RELEVANTES =====
+Path
+----
+C:\Users\libre\OneDrive\Imágenes\Escritorio\048-proyecto-final
+
+IgnoreCase : True
+LineNumber : 17
+Line       : ?? respaldo-auditoria_20261016_185244/
+Filename   : InputStream
+Path       : InputStream
+Pattern    : node_modules|playwright-report|test-results|\.env|\.log|\.tmp|respaldo|backup
+Context    :
+Matches    : {0}
+
+
+IgnoreCase : True
+LineNumber : 18
+Line       : ?? respaldo-pre-suite_20261023_155707/
+Filename   : InputStream
+Path       : InputStream
+Pattern    : node_modules|playwright-report|test-results|\.env|\.log|\.tmp|respaldo|backup
+Context    :
+Matches    : {0}
+
+
+IgnoreCase : True
+LineNumber : 19
+Line       : ?? respaldo-reporte-html_20261016_185415/
+Filename   : InputStream
+Path       : InputStream
+Pattern    : node_modules|playwright-report|test-results|\.env|\.log|\.tmp|respaldo|backup
+Context    :
+Matches    : {0}
+
+
+IgnoreCase : True
+LineNumber : 21
+Line       : !! helpers/evidencias.ts.backup-20261010
+Filename   : InputStream
+Path       : InputStream
+Pattern    : node_modules|playwright-report|test-results|\.env|\.log|\.tmp|respaldo|backup
+Context    :
+Matches    : {0}
+
+
+IgnoreCase : True
+LineNumber : 22
+Line       : !! node_modules/
+Filename   : InputStream
+Path       : InputStream
+Pattern    : node_modules|playwright-report|test-results|\.env|\.log|\.tmp|respaldo|backup
+Context    :
+Matches    : {0}
+
+
+IgnoreCase : True
+LineNumber : 23
+Line       : !! package.json.backup
+Filename   : InputStream
+Path       : InputStream
+Pattern    : node_modules|playwright-report|test-results|\.env|\.log|\.tmp|respaldo|backup
+Context    :
+Matches    : {0}
+
+
+IgnoreCase : True
+LineNumber : 24
+Line       : !! playwright-report/
+Filename   : InputStream
+Path       : InputStream
+Pattern    : node_modules|playwright-report|test-results|\.env|\.log|\.tmp|respaldo|backup
+Context    :
+Matches    : {0}
+
+
+IgnoreCase : True
+LineNumber : 25
+Line       : !! respaldo-pre-suite_20261023_155707/playwright-report/
+Filename   : InputStream
+Path       : InputStream
+Pattern    : node_modules|playwright-report|test-results|\.env|\.log|\.tmp|respaldo|backup
+Context    :
+Matches    : {0}
+
+
+IgnoreCase : True
+LineNumber : 26
+Line       : !! respaldo-pre-suite_20261023_155707/test-results/
+Filename   : InputStream
+Path       : InputStream
+Pattern    : node_modules|playwright-report|test-results|\.env|\.log|\.tmp|respaldo|backup
+Context    :
+Matches    : {0}
+
+
+IgnoreCase : True
+LineNumber : 27
+Line       : !! test-results/
+Filename   : InputStream
+Path       : InputStream
+Pattern    : node_modules|playwright-report|test-results|\.env|\.log|\.tmp|respaldo|backup
+Context    :
+Matches    : {0}
+
+
+IgnoreCase : True
+LineNumber : 28
+Line       : !! tests/smoke.spec.ts.backup-20261010
+Filename   : InputStream
+Path       : InputStream
+Pattern    : node_modules|playwright-report|test-results|\.env|\.log|\.tmp|respaldo|backup
+Context    :
+Matches    : {0}
+
+
+===== 6. ARCHIVOS PRINCIPALES DEL PROYECTO =====
+ENCONTRADO: .\package.json
+ENCONTRADO: .\package-lock.json
+ENCONTRADO: .\playwright.config.ts
+ENCONTRADO: .\tsconfig.json
+ENCONTRADO: .\.gitignore
+ENCONTRADO: .\.npmrc
+ENCONTRADO: .\README.md
+ENCONTRADO: .\tests
+ENCONTRADO: .\pages
+ENCONTRADO: .\fixtures
+ENCONTRADO: .\reportes
+ENCONTRADO: .\evidencias
+
+===== 7. ARCHIVOS GRANDES DEL REPOSITORIO =====
+PS>ErrorTerminación(Test-Path): "Se detuvo el comando en ejecución porque la variable de preferencia "ErrorActionPreference" o un parámetro común se han establecido en Stop: Caracteres no válidos en la ruta de acceso."
+>> ErrorTerminación(Test-Path): "Se detuvo el comando en ejecución porque la variable de preferencia "ErrorActionPreference" o un parámetro común se han establecido en Stop: Caracteres no válidos en la ruta de acceso."
+**********************
+Fin de la transcripción de Windows PowerShell
+Hora de finalización: 20261023174330
+**********************

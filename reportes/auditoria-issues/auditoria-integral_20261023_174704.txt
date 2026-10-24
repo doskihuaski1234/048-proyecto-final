@@ -1,0 +1,517 @@
+﻿**********************
+Inicio de la transcripción de Windows PowerShell
+Hora de inicio: 20261023174704
+Nombre de usuario: ALEX\PAOLO
+Usuario RunAs: ALEX\PAOLO
+Nombre de la configuración: 
+Máquina: ALEX (Microsoft Windows NT 10.0.26200.0)
+Aplicación host: C:\WINDOWS\System32\WindowsPowerShell\v1.0\powershell.exe -noexit -command try { . "c:\Users\libre\AppData\Local\Programs\Microsoft VS Code\6d62b1d5da\resources\app\out\vs\workbench\contrib\terminal\common\scripts\shellIntegration.ps1" } catch {}
+Id. de proceso: 2708
+PSVersion: 5.1.26100.9711
+PSEdition: Desktop
+PSCompatibleVersions: 1.0, 2.0, 3.0, 4.0, 5.0, 5.1.26100.9711
+BuildVersion: 10.0.26100.9711
+CLRVersion: 4.0.30319.42000
+WSManStackVersion: 3.0
+PSRemotingProtocolVersion: 2.3
+SerializationVersion: 1.1.0.1
+**********************
+La transcripción ha comenzado. El archivo de salida es C:\Users\libre\OneDrive\Imágenes\Escritorio\048-proyecto-final\reportes\auditoria-issues\auditoria-integral_20261023_174704.txt
+
+========== 1. IDENTIDAD Y SINCRONIZACION GIT ==========
+
+
+
+
+
+========== 2. CONFIGURACION DEL PROYECTO ==========
+
+--- package.json ---
+{
+    "name":  "048-proyecto-final",
+    "version":  "1.0.0",
+    "description":  "Proyecto final de pruebas automatizadas con Playwright y TypeScript",
+    "main":  "index.js",
+    "scripts":  {
+                    "test":  "playwright test",
+                    "test:headed":  "playwright test --headed",
+                    "test:ui":  "playwright test --ui",
+                    "test:report":  "playwright show-report",
+                    "test:single":  "playwright test --workers=1",
+                    "smoke":  "playwright test tests/smoke.spec.ts",
+                    "funcional":  "playwright test tests/funcional.spec.ts",
+                    "instalacion":  "playwright test tests/instalacion.spec.ts",
+                    "chromium":  "playwright test --project=chromium",
+                    "firefox":  "playwright test --project=firefox",
+                    "webkit":  "playwright test --project=webkit",
+                    "visible":  "playwright test --headed",
+                    "test:smoke":  "playwright test --grep @smoke",
+                    "test:regression":  "playwright test --grep @regression",
+                    "test:chromium":  "playwright test --project=chromium",
+                    "test:firefox":  "playwright test --project=firefox",
+                    "test:webkit":  "playwright test --project=webkit",
+                    "test:types":  "tsc --noEmit"
+                },
+    "repository":  {
+                       "type":  "git",
+                       "url":  "git+https://github.com/doskihuaski1234/048-proyecto-final.git"
+                   },
+    "keywords":  [
+
+                 ],
+    "author":  "",
+    "license":  "ISC",
+    "type":  "commonjs",
+    "bugs":  {
+                 "url":  "https://github.com/doskihuaski1234/048-proyecto-final/issues"
+             },
+    "homepage":  "https://github.com/doskihuaski1234/048-proyecto-final#readme",
+    "devDependencies":  {
+                            "@playwright/test":  "^1.64.0",
+                            "@types/node":  "^26.6.4",
+                            "typescript":  "^7.0.2"
+                        }
+}
+
+--- playwright.config.ts ---
+import { defineConfig, devices } from "@playwright/test";
+
+export default defineConfig({
+  testDir: "./tests",
+  fullyParallel: true,
+  forbidOnly: Boolean(process.env.CI),
+  retries: process.env.CI ? 2 : 0,
+  workers: process.env.CI ? 1 : undefined,
+  reporter: [
+    ["list"],
+    ["html", { outputFolder: "playwright-report", open: "never" }]
+  ],
+  use: {
+    baseURL: process.env.BASE_URL || "http://opencart.abstracta.us",
+    trace: "retain-on-failure",
+    screenshot: "only-on-failure",
+    video: "retain-on-failure"
+  },
+  projects: [
+    {
+      name: "chromium",
+      use: { ...devices["Desktop Chrome"] }
+    },
+    {
+      name: "firefox",
+      use: { ...devices["Desktop Firefox"] }
+    },
+    {
+      name: "webkit",
+      use: { ...devices["Desktop Safari"] }
+    }
+  ]
+});
+
+--- tsconfig.json ---
+{
+  "compilerOptions": {
+    "target": "ES2022",
+    "module": "Node16",
+    "moduleResolution": "Node16",
+    "strict": true,
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "types": ["node", "@playwright/test"],
+    "noEmit": true
+  },
+  "include": [
+    "tests/**/*.ts",
+    "pages/**/*.ts",
+    "fixtures/**/*.ts",
+    "helpers/**/*.ts",
+    "playwright.config.ts"
+  ]
+}
+
+--- .gitignore ---
+node_modules/
+playwright-report/
+test-results/
+blob-report/
+.env
+.env.*
+!.env.example
+*.log
+.snapshots/
+*.backup
+*.backup-*
+
+--- .npmrc ---
+ignore-scripts=true
+
+--- README.md ---
+# Suite de Pruebas Automatizadas - OpenCart
+
+## 1. Descripción del proyecto
+
+Este proyecto contiene una suite de pruebas automatizadas desarrollada con Playwright y TypeScript para verificar funcionalidades de la tienda de demostración OpenCart.
+
+La suite utiliza el patrón Page Object Model (POM) para organizar los selectores y las acciones de la página principal.
+
+## 2. Tecnologías utilizadas
+
+- Node.js
+- TypeScript
+- Playwright Test
+- Chromium
+- Firefox
+- WebKit
+- OpenCart Demo: http://opencart.abstracta.us
+
+## 3. Requisitos previos
+
+Antes de ejecutar las pruebas, instala:
+
+- Node.js y npm.
+- Git.
+- Visual Studio Code (opcional, recomendado).
+
+Comprueba la instalación con:
+
+```powershell
+node --version
+npm --version
+```
+
+## 4. Instalación del proyecto
+
+Clona el repositorio y entra en su carpeta:
+
+```powershell
+git clone https://github.com/doskihuaski1234/048-proyecto-final.git
+cd 048-proyecto-final
+```
+
+Instala las dependencias:
+
+```powershell
+npm install
+```
+
+Instala los navegadores requeridos por Playwright:
+
+```powershell
+npx playwright install
+```
+
+Si ya tienes el proyecto descargado, ejecuta los comandos desde su carpeta raíz.
+
+## 5. Ejecución de las pruebas
+
+Ejecutar toda la suite:
+
+```powershell
+npx playwright test
+```
+
+Ejecutar con un solo trabajador:
+
+```powershell
+npx playwright test --workers=1
+```
+
+Ejecutar únicamente Chromium:
+
+```powershell
+npx playwright test --project=chromium
+```
+
+Ejecutar únicamente Firefox:
+
+```powershell
+npx playwright test --project=firefox
+```
+
+Ejecutar únicamente WebKit:
+
+```powershell
+npx playwright test --project=webkit
+```
+
+Ejecutar las pruebas mostrando el navegador:
+
+```powershell
+npx playwright test --headed
+```
+
+Ejecutar la prueba de instalación:
+
+```powershell
+npx playwright test tests/instalacion.spec.ts
+```
+
+Ejecutar las pruebas funcionales:
+
+```powershell
+npx playwright test tests/funcional.spec.ts
+```
+
+Ejecutar la prueba smoke:
+
+```powershell
+npx playwright test tests/smoke.spec.ts
+```
+
+## 6. Configuración
+
+La configuración principal se encuentra en `playwright.config.ts`.
+
+- Carpeta de pruebas: `tests/`.
+- Navegadores: Chromium, Firefox y WebKit.
+- Capturas automáticas: cuando una prueba falla.
+- Videos y trazas: conservados cuando corresponde a un fallo.
+- Reporte HTML: generado en `playwright-report/`.
+- URL base predeterminada: `http://opencart.abstracta.us`.
+
+Para cambiar la URL base, define la variable de entorno `BASE_URL` antes de ejecutar las pruebas.
+
+Ejemplo en PowerShell:
+
+```powershell
+$env:BASE_URL = "https://tu-sitio-de-pruebas.example"
+npx playwright test
+```
+
+Sustituye el ejemplo por la URL real del entorno que deseas probar.
+
+## 7. Generación y consulta del reporte HTML
+
+Después de ejecutar las pruebas, abre el reporte con:
+
+```powershell
+npx playwright show-report
+```
+
+El reporte HTML de Playwright se genera en:
+
+`playwright-report/`
+
+La carpeta `reportes/` contiene una copia del reporte y los archivos utilizados para documentar el análisis de estabilidad.
+
+Para actualizar la copia del reporte:
+
+```powershell
+New-Item -ItemType Directory -Force -Path .\reportes | Out-Null
+Copy-Item -Path .\playwright-report\* -Destination .\reportes\ -Recurse -Force
+```
+
+## 8. Análisis de estabilidad
+
+Se realizaron tres ejecuciones consecutivas de la suite con un solo trabajador.
+
+| Ejecución | Aprobadas | Fallidas |
+|---|---:|---:|
+| 1 | 15 | 0 |
+| 2 | 14 | 1 |
+| 3 | 13 | 2 |
+| Total | 42 | 3 |
+
+Resultados observados:
+
+- Pruebas ejecutadas: 45.
+- Pruebas aprobadas: 42.
+- Pruebas fallidas: 3.
+- Tasa global de aprobación: 93.33 %.
+- Tasa global de fallos: 6.67 %.
+
+Los fallos registrados se concentraron en Firefox y estuvieron relacionados con tiempos de espera. La causa raíz todavía requiere investigación.
+
+El análisis completo está en `reportes/analisis-estabilidad.md`.
+
+Los registros individuales están en:
+
+- `reportes/estabilidad-ejecucion-1.txt`
+- `reportes/estabilidad-ejecucion-2.txt`
+- `reportes/estabilidad-ejecucion-3.txt`
+
+## 9. Evidencias e incidencias
+
+La carpeta `evidencias/` contiene material de apoyo para investigar las incidencias observadas.
+
+Entre las evidencias recopiladas se incluyen:
+
+- Capturas de pantalla.
+- Videos de las ejecuciones fallidas.
+- Trazas de Playwright.
+- Contextos de error.
+
+Las evidencias de Firefox se encuentran en `evidencias/fallos-firefox/`.
+
+El registro descriptivo de las incidencias se encuentra en `evidencias/incidencias.md`.
+
+Importante: los fallos de ejecución automatizada no confirman por sí solos defectos funcionales de OpenCart. Es necesario investigar y reproducir cada incidencia antes de clasificarla como un defecto confirmado.
+
+## 10. Estructura del proyecto
+
+```text
+048-proyecto-final/
+├── evidencias/
+│   ├── fallos-firefox/
+│   └── incidencias.md
+├── pages/
+│   └── HomePage.ts
+├── reportes/
+│   ├── analisis-estabilidad.md
+│   ├── estabilidad-ejecucion-1.txt
+│   ├── estabilidad-ejecucion-2.txt
+│   ├── estabilidad-ejecucion-3.txt
+│   └── index.html
+├── tests/
+│   ├── instalacion.spec.ts
+│   ├── smoke.spec.ts
+│   └── funcional.spec.ts
+├── playwright.config.ts
+├── package.json
+├── package-lock.json
+└── README.md
+```
+
+La estructura anterior representa los archivos principales esperados; pueden existir otros archivos y carpetas auxiliares.
+
+## 11. Verificación de tipos
+
+Para comprobar los tipos de TypeScript:
+
+```powershell
+npx tsc --noEmit
+```
+
+## 12. Repositorio y seguimiento de incidencias
+
+Repositorio del proyecto:
+
+https://github.com/doskihuaski1234/048-proyecto-final
+
+Los colaboradores deben contar con los permisos correspondientes para revisar el código y los reportes.
+
+Las incidencias confirmadas deben documentarse mediante GitHub Issues, incluyendo pasos para reproducirlas, resultado esperado, resultado obtenido y evidencias.
+
+Antes de entregar, verifica que el colaborador solicitado tenga acceso al repositorio y que las incidencias documentadas estén enlazadas a sus respectivos Issues.
+
+========== 3. INVENTARIO POR EXTENSION ==========
+Total de archivos, excluyendo node_modules y .git: 295
+.png                  193
+.md                    21
+.ts                    18
+.txt                   18
+.js                     7
+.html                   7
+.json                   7
+.css                    5
+.zip                    4
+.webm                   4
+.docx                   2
+.backup-20261010        2
+.svg                    1
+.ttf                    1
+.webmanifest            1
+.backup                 1
+.npmrc                  1
+.xlsx                   1
+.gitignore              1
+
+========== 4. PRUEBAS AUTOMATIZADAS ==========
+Archivos dentro de tests: 7
+tests\funcional.spec.ts (1.1 KB)
+tests\instalacion.spec.ts (0.4 KB)
+tests\regresion-buscador.spec.ts (0.5 KB)
+tests\regresion-catalogo.spec.ts (2.3 KB)
+tests\regresion.spec.ts (0.6 KB)
+tests\smoke.spec.ts (1.4 KB)
+tests\smoke.spec.ts.backup-20261010 (1.5 KB)
+
+========== 5. REPORTES Y DOCUMENTOS ==========
+Total de archivos en reportes: 53
+reportes\analisis-estabilidad.md | 3.0 KB
+reportes\analisis-tests-fragiles.md | 0.6 KB
+reportes\auditoria-final-requisitos.md | 2.9 KB
+reportes\auditoria-requisitos-2026-10-10.md | 1.7 KB
+reportes\casos-prueba-manuales.md | 4.6 KB
+reportes\ejecucion-integral-2026-10-10.txt | 8.7 KB
+reportes\ejecucion-integral-2026-10-16.md | 0.8 KB
+reportes\estabilidad-ejecucion-1.txt | 3.9 KB
+reportes\estabilidad-ejecucion-2.txt | 6.2 KB
+reportes\estabilidad-ejecucion-3.txt | 9.7 KB
+reportes\index.html | 514.4 KB
+reportes\plantilla-defectos.md | 1.1 KB
+reportes\regresion-buscador.md | 1.1 KB
+reportes\regresion-carrito.md | 1.2 KB
+reportes\suite-completa-2026-10-10.md | 2.1 KB
+reportes\auditoria-issues\auditoria-inicial-proyecto_20261023_174322.txt | 5.0 KB
+reportes\auditoria-issues\auditoria-integral_20261023_174704.txt | 10.9 KB
+reportes\auditoria-issues\auditoria-segura_20261023_174516.txt | 5.7 KB
+reportes\auditoria-issues\consulta-github_20261023_165736.txt | 4.0 KB
+reportes\auditoria-issues\preparacion-evidencias-issues_20261023_174010.txt | 2.5 KB
+reportes\auditoria-issues\publicacion-BUG-001_20261023_165948.txt | 1.7 KB
+reportes\auditoria-issues\publicacion-BUG-002_20261023_173830.txt | 2.5 KB
+reportes\auditoria-issues\registro-issues.md | 1.4 KB
+reportes\auditoria-issues\revision-issues_20261023_164442.txt | 2.3 KB
+reportes\auditoria-issues\verificacion-BUG-001_20261023_170035.txt | 2.0 KB
+reportes\data\6f1db982ca586265b97e45609a2764eb7233ec50.zip | 351.9 KB
+reportes\data\b0b0929f8ebd2afe46b197d0378cdad49aed2eec.md | 0.4 KB
+reportes\data\b0fd1c61ef7f687039d684e762588d661ed4c709.md | 13.4 KB
+reportes\data\c9c6333a4f56e5bee9f863e4cd4b9c2eb07910c9.zip | 1,399.9 KB
+reportes\data\d2e63c474f70519e6800127ab0fea3779cde0efe.webm | 393.3 KB
+reportes\data\e395d347da524e243be4ca9c3cb348a0d1919703.png | 188.8 KB
+reportes\data\f14a00bc62a0f636873a7e7d15bcb49239c9a02d.webm | 187.2 KB
+reportes\ejecucion-manual\BUG-001-busqueda-sin-resultados.docx | 1,733.7 KB
+reportes\ejecucion-manual\BUG-002-disponibilidad-carrito.docx | 1,775.9 KB
+reportes\ejecucion-manual\Plantilla - Casos de prueba - ejecutada.xlsx | 368.4 KB
+reportes\trace\codeMirrorModule.-QdMvsKi.css | 6.1 KB
+reportes\trace\codicon.DCmgc-ay.ttf | 78.5 KB
+reportes\trace\defaultSettingsView.C8BeHuxd.css | 104.8 KB
+reportes\trace\index.7-c5LSTW.js | 6.5 KB
+reportes\trace\index.B_TqY17P.css | 2.0 KB
+reportes\trace\index.html | 2.3 KB
+reportes\trace\manifest.webmanifest | 0.4 KB
+reportes\trace\playwright-logo.svg | 4.9 KB
+reportes\trace\snapshot.B_Jk1wbt.js | 0.6 KB
+reportes\trace\snapshot.html | 0.4 KB
+reportes\trace\sw.bundle.js | 94.5 KB
+reportes\trace\uiMode.CyMfwkXJ.css | 53.3 KB
+reportes\trace\uiMode.CYwC_gH1.js | 37.2 KB
+reportes\trace\uiMode.html | 0.7 KB
+reportes\trace\xtermModule.kHJ-D0s7.css | 2.8 KB
+reportes\trace\assets\codeMirrorModule-BEB2e8M3.js | 300.2 KB
+reportes\trace\assets\defaultSettingsView-D-g2vrvf.js | 652.0 KB
+reportes\trace\assets\urlMatch-L3liM589.js | 2.5 KB
+
+========== 6. EVIDENCIAS ==========
+evidencias: 101 archivos, 35.74 MB
+evidencias\capturas: 70 archivos, 30.46 MB
+evidencias\manuales: 13 archivos, 1.74 MB
+evidencias\github-issues: 7 archivos, 0.55 MB
+evidencias\fallos-firefox: 8 archivos, 2.66 MB
+
+========== 7. RESPALDOS LOCALES ==========
+respaldo-auditoria_20261016_185244 | 1 archivos | 0.00 MB
+respaldo-pre-suite_20261023_155707 | 85 archivos | 37.92 MB
+respaldo-reporte-html_20261016_185415 | 10 archivos | 3.48 MB
+
+========== 8. ARCHIVOS GRANDES ==========
+No hay archivos individuales de 10 MB o mas.
+
+========== 9. VALIDACION DE TYPESCRIPT ==========
+
+Codigo de salida de TypeScript: 0
+
+========== 10. PRUEBAS QUE PLAYWRIGHT RECONOCE ==========
+
+Codigo de salida del listado de Playwright: 0
+
+========== 11. ISSUES DE GITHUB ==========
+
+Codigo de salida de GitHub CLI: 0
+
+========== 12. FIN DEL INFORME ==========
+Informe: C:\Users\libre\OneDrive\Imágenes\Escritorio\048-proyecto-final\reportes\auditoria-issues\auditoria-integral_20261023_174704.txt
+**********************
+Fin de la transcripción de Windows PowerShell
+Hora de finalización: 20261023174715
+**********************

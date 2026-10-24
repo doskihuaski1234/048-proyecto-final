@@ -1,0 +1,124 @@
+﻿**********************
+Inicio de la transcripción de Windows PowerShell
+Hora de inicio: 20261023174516
+Nombre de usuario: ALEX\PAOLO
+Usuario RunAs: ALEX\PAOLO
+Nombre de la configuración: 
+Máquina: ALEX (Microsoft Windows NT 10.0.26200.0)
+Aplicación host: C:\WINDOWS\System32\WindowsPowerShell\v1.0\powershell.exe -noexit -command try { . "c:\Users\libre\AppData\Local\Programs\Microsoft VS Code\6d62b1d5da\resources\app\out\vs\workbench\contrib\terminal\common\scripts\shellIntegration.ps1" } catch {}
+Id. de proceso: 2708
+PSVersion: 5.1.26100.9711
+PSEdition: Desktop
+PSCompatibleVersions: 1.0, 2.0, 3.0, 4.0, 5.0, 5.1.26100.9711
+BuildVersion: 10.0.26100.9711
+CLRVersion: 4.0.30319.42000
+WSManStackVersion: 3.0
+PSRemotingProtocolVersion: 2.3
+SerializationVersion: 1.1.0.1
+**********************
+La transcripción ha comenzado. El archivo de salida es .\reportes\auditoria-issues\auditoria-segura_20261023_174516.txt
+
+===== 1. ESTADO DE GIT =====
+
+
+===== 2. CAMBIOS PREPARADOS =====
+
+
+===== 3. CAMBIOS NO PREPARADOS =====
+
+
+===== 4. ARCHIVOS GRANDES (10 MB O MÁS) =====
+PS>ErrorTerminación(Test-Path): "Se detuvo el comando en ejecución porque la variable de preferencia "ErrorActionPreference" o un parámetro común se han establecido en Stop: Caracteres no válidos en la ruta de acceso."
+No se pudo inspeccionar: "evidencias/fallos-firefox/funcional-Pruebas-funciona-410b7-as-categor\303\255as-de-navegaci\303\263n-firefox_error-context.md"
+PS>ErrorTerminación(Test-Path): "Se detuvo el comando en ejecución porque la variable de preferencia "ErrorActionPreference" o un parámetro común se han establecido en Stop: Caracteres no válidos en la ruta de acceso."
+No se pudo inspeccionar: "evidencias/fallos-firefox/funcional-Pruebas-funciona-410b7-as-categor\303\255as-de-navegaci\303\263n-firefox_test-failed-1.png"
+PS>ErrorTerminación(Test-Path): "Se detuvo el comando en ejecución porque la variable de preferencia "ErrorActionPreference" o un parámetro común se han establecido en Stop: Caracteres no válidos en la ruta de acceso."
+No se pudo inspeccionar: "evidencias/fallos-firefox/funcional-Pruebas-funciona-410b7-as-categor\303\255as-de-navegaci\303\263n-firefox_trace.zip"
+PS>ErrorTerminación(Test-Path): "Se detuvo el comando en ejecución porque la variable de preferencia "ErrorActionPreference" o un parámetro común se han establecido en Stop: Caracteres no válidos en la ruta de acceso."
+No se pudo inspeccionar: "evidencias/fallos-firefox/funcional-Pruebas-funciona-410b7-as-categor\303\255as-de-navegaci\303\263n-firefox_video.webm"
+No se encontraron archivos grandes seguidos por Git.
+
+===== 5. TAMAÑO DE RESPALDOS =====
+respaldo-auditoria_20261016_185244 | Archivos: 1 | MB: 0
+respaldo-pre-suite_20261023_155707 | Archivos: 85 | MB: 37.92
+respaldo-reporte-html_20261016_185415 | Archivos: 10 | MB: 3.48
+
+===== 6. PACKAGE.JSON =====
+{
+    "name":  "048-proyecto-final",
+    "version":  "1.0.0",
+    "description":  "Proyecto final de pruebas automatizadas con Playwright y TypeScript",
+    "main":  "index.js",
+    "scripts":  {
+                    "test":  "playwright test",
+                    "test:headed":  "playwright test --headed",
+                    "test:ui":  "playwright test --ui",
+                    "test:report":  "playwright show-report",
+                    "test:single":  "playwright test --workers=1",
+                    "smoke":  "playwright test tests/smoke.spec.ts",
+                    "funcional":  "playwright test tests/funcional.spec.ts",
+                    "instalacion":  "playwright test tests/instalacion.spec.ts",
+                    "chromium":  "playwright test --project=chromium",
+                    "firefox":  "playwright test --project=firefox",
+                    "webkit":  "playwright test --project=webkit",
+                    "visible":  "playwright test --headed",
+                    "test:smoke":  "playwright test --grep @smoke",
+                    "test:regression":  "playwright test --grep @regression",
+                    "test:chromium":  "playwright test --project=chromium",
+                    "test:firefox":  "playwright test --project=firefox",
+                    "test:webkit":  "playwright test --project=webkit",
+                    "test:types":  "tsc --noEmit"
+                },
+    "repository":  {
+                       "type":  "git",
+                       "url":  "git+https://github.com/doskihuaski1234/048-proyecto-final.git"
+                   },
+    "keywords":  [
+
+                 ],
+    "author":  "",
+    "license":  "ISC",
+    "type":  "commonjs",
+    "bugs":  {
+                 "url":  "https://github.com/doskihuaski1234/048-proyecto-final/issues"
+             },
+    "homepage":  "https://github.com/doskihuaski1234/048-proyecto-final#readme",
+    "devDependencies":  {
+                            "@playwright/test":  "^1.64.0",
+                            "@types/node":  "^26.6.4",
+                            "typescript":  "^7.0.2"
+                        }
+}
+
+===== 7. .GITIGNORE =====
+node_modules/
+playwright-report/
+test-results/
+blob-report/
+.env
+.env.*
+!.env.example
+*.log
+.snapshots/
+*.backup
+*.backup-*
+
+===== 8. .NPMRC =====
+ignore-scripts=true
+
+===== 9. ARCHIVOS TEMPORALES EN LA RAÍZ =====
+
+Name                Length LastWriteTime
+----                ------ -------------
+package.json.backup    830 8/10/2026 23:58:50
+
+
+
+===== 10. INFORME GUARDADO =====
+.\reportes\auditoria-issues\auditoria-segura_20261023_174516.txt
+Auditoría de solo lectura terminada.
+No se eliminaron archivos ni se realizó commit o push.
+**********************
+Fin de la transcripción de Windows PowerShell
+Hora de finalización: 20261023174517
+**********************
