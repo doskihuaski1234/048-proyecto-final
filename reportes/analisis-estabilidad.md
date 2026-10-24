@@ -61,3 +61,9 @@ La suite automatizada funciona en los tres navegadores, pero las ejecuciones rep
 - estabilidad-ejecucion-3.txt
 
 Los registros se encuentran en la carpeta reportes/.
+
+## Actualizacion 24/10/2026 09:56
+
+Se aplico una correccion de tiempos de espera y se repitio `funcional.spec.ts` 10 veces en Firefox: 30 pasaron y 0 fallaron. Detalle en `reportes/analisis-tests-fragiles.md`.
+
+> Aclaracion: en la medicion previa a la correccion (30 ejecuciones) no se reprodujeron fallos, por lo que la mejora no se atribuye con certeza a la correccion. Ver `reportes/analisis-tests-fragiles.md`.

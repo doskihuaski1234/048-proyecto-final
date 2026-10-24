@@ -1,7 +1,9 @@
-﻿import { defineConfig, devices } from "@playwright/test";
+import { defineConfig, devices } from "@playwright/test";
 
 export default defineConfig({
   testDir: "./tests",
+  timeout: 60000,
+  expect: { timeout: 10000 },
   fullyParallel: true,
   forbidOnly: Boolean(process.env.CI),
   retries: process.env.CI ? 2 : 0,
@@ -12,6 +14,8 @@ export default defineConfig({
   ],
   use: {
     baseURL: process.env.BASE_URL || "http://opencart.abstracta.us",
+    actionTimeout: 15000,
+    navigationTimeout: 45000,
     trace: "retain-on-failure",
     screenshot: "only-on-failure",
     video: "retain-on-failure"

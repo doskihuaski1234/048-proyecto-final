@@ -28,3 +28,7 @@ Este registro se genera desde PowerShell. La evidencia original permanece en el 
 - Documento original: reportes/ejecucion-manual/BUG-002-disponibilidad-carrito.docx
 - Transcripción de publicación: .\reportes\auditoria-issues\publicacion-BUG-002_20261023_173830.txt
 - Estado: pendiente de verificación final
+
+## BUG-003
+- URL: https://github.com/doskihuaski1234/048-proyecto-final/issues/3
+- Origen: tests/accesibilidad.spec.ts (axe-core, button-name)
